@@ -1,10 +1,10 @@
 import './App.css';
 import React from 'react';
-import PageTitle from './componenets/PageTitle';
-import AnimalForm from "./componenets/AnimalForm";
-import MainCard from './componenets/MainCard';
-import AnimalItem from './componenets/AnimalItem';
-import Favorites from './componenets/Favorites';
+import PageTitle from './components/PageTitle';
+import AnimalForm from "./components/AnimalForm";
+import MainCard from './components/MainCard';
+import AnimalItem from './components/AnimalItem';
+import Favorites from './components/Favorites';
 
 
 const jsonLocalStorage = {
