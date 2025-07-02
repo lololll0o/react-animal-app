@@ -16,12 +16,19 @@ const jsonLocalStorage = {
   },
 };
 
+const OPEN_API_DOMAIN = "https://cataas.com";
+
+const fetchCat = async (text) => {
+
+  const response = await fetch(`${OPEN_API_DOMAIN}/cat/says/${text}?json=true`);
+  const responsejson = await response.json();
+
+  return responsejson.url;
+}
 
 function App() {
-  const animal01 = process.env.PUBLIC_URL + "/img/fox.png";
-  const animal02 = process.env.PUBLIC_URL + "/img/elephant.png";
 
-  const [mainAnimal, setMainAnimal] = React.useState(animal01);
+  const [mainAnimal, setMainAnimal] = React.useState(`${OPEN_API_DOMAIN}/cat`);
 
   const [favorites, setFavorites]
     = React.useState(() => {
@@ -43,8 +50,9 @@ function App() {
     });
   }
 
-  function updateMainCard() {
-    setMainAnimal(animal02);
+  async function updateMainCard() {
+    const Cat = await fetchCat("Cute");
+    setMainAnimal(Cat);
     incrementCount();
   }
 
@@ -58,7 +66,7 @@ function App() {
 
   return (
     <div>
-      <PageTitle>{count}페이지🌴</PageTitle>
+      <PageTitle>고양이가 세상을 구한다 🐱🧡</PageTitle>
       <AnimalForm updateMainCard={updateMainCard} />
       <MainCard
         src={mainAnimal}
