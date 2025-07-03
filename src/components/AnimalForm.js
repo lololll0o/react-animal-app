@@ -29,7 +29,7 @@ const AnimalForm = ({ updateMainCard }) => {
     }
 
     setErrorMessage("")
-    updateMainCard();
+    updateMainCard(value);
   }
 
 
@@ -39,7 +39,7 @@ const AnimalForm = ({ updateMainCard }) => {
         type="text"
         name="name"
         id="name"
-        placeholder="귀여운 동물을 입력하세요."
+        placeholder="삽입할 Text를 입력하세요"
         onChange={handleInputChange}
         value={value}
       />

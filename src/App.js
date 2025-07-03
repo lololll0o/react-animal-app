@@ -20,7 +20,7 @@ const OPEN_API_DOMAIN = "https://cataas.com";
 
 const fetchCat = async (text) => {
 
-  const response = await fetch(`${OPEN_API_DOMAIN}/cat/says/${text}?json=true`);
+  const response = await fetch(`${OPEN_API_DOMAIN}/cat/says/${text}?width=500&height=500&json=true`);
   const responsejson = await response.json();
 
   return responsejson.url;
@@ -50,8 +50,8 @@ function App() {
     });
   }
 
-  async function updateMainCard() {
-    const Cat = await fetchCat("Cute");
+  async function updateMainCard(value) {
+    const Cat = await fetchCat(value);
     setMainAnimal(Cat);
     incrementCount();
   }
