@@ -1,4 +1,6 @@
 import React from "react";
+import styles from "./AnimalForm.module.css"
+
 
 const AnimalForm = ({ updateMainCard }) => {
   const [value, setValue] = React.useState("")
@@ -34,7 +36,7 @@ const AnimalForm = ({ updateMainCard }) => {
 
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={styles.AnimalForm}>
       <input
         type="text"
         name="name"

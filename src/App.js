@@ -1,20 +1,12 @@
-import './App.css';
 import React from 'react';
-import PageTitle from './components/PageTitle';
-import AnimalForm from "./components/AnimalForm";
-import MainCard from './components/MainCard';
-import AnimalItem from './components/AnimalItem';
-import Favorites from './components/Favorites';
+import PageTitle from './components/PageTitle/PageTitle';
+import AnimalForm from "./components/AnimalForm/AnimalForm";
+import MainCard from './components/MainCard/MainCard';
+import AnimalItem from './components/Favorites/AnimalItem';
+import Favorites from './components/Favorites/Favorites';
+import jsonLocalStorage from "./utils/jsonLocalStorage"
 
 
-const jsonLocalStorage = {
-  setItem: (key, value) => {
-    localStorage.setItem(key, JSON.stringify(value));
-  },
-  getItem: (key) => {
-    return JSON.parse(localStorage.getItem(key));
-  },
-};
 
 const OPEN_API_DOMAIN = "https://cataas.com";
 
